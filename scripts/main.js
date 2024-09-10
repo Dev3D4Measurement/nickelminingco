@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('header nav');
 
     if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            nav.classList.toggle('show');
-            hamburger.classList.toggle('active');
-        });
+        hamburger.addEventListener('click', () => {
+                nav.classList.toggle('show');
+                hamburger.classList.toggle('active');
+            });
     }
 
     // 현재 페이지 메뉴 항목 강조
@@ -36,4 +36,4 @@ document.addEventListener('DOMContentLoaded', function() {
       item.classList.add("active");
     }
   });
-});
+
