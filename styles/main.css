@@ -15,15 +15,15 @@ body {
 
 /* Header styles */
 header {
-    background: #1f3a4d;
+    background: #2516b4;
     color: white;
     padding: 1rem 0;
 }
 
 header .container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
+    justify-content:center;
 }
 
 .logo {
@@ -64,7 +64,7 @@ header nav ul li a {
 
 .home-hero {
     height: 1000px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation04.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation05.png');
 }
 
 .page-hero {
@@ -187,6 +187,48 @@ footer {
     }
 
     .home-hero {
-        height: 500px;
+        height: 200px;
     }
+}
+
+.hero.home-hero {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    /* 화면 전체 높이 */
+    background-image: url('../images/operation01.png');
+    /* 배경 이미지 URL */
+    background-size: cover;
+    /* 이미지를 섹션에 꽉 차게 */
+    background-position: center;
+    /* 이미지를 가운데 정렬 */
+    overflow: hidden;
+    /* 콘텐츠가 섹션을 넘치지 않도록 */
+}
+
+.hero.home-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: rgba(16, 16, 16, 0.4);
+    /* 블러 처리된 배경 위에 어두운 오버레이 추가 */
+    backdrop-filter: blur(10px);
+    /* Blur 효과 추가 */
+    z-index: 1;
+    /* 오버레이와 Blur 효과를 텍스트 뒤에 배치 */
+}
+
+.hero.home-hero .container {
+    position: relative;
+    z-index: 2;
+    /* 텍스트를 오버레이와 Blur 효과 위에 배치 */
+    color: white;
+    /* 텍스트를 읽기 쉽게 흰색으로 설정 */
+    text-align: center;
+    /* 텍스트를 중앙 정렬 */
+    padding-top: 10vh;
+    /* 텍스트를 화면 중앙에 배치 (옵션) */
 }
