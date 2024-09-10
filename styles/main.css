@@ -212,3 +212,32 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+.info-cards {
+    padding: 2rem 0;
+    background-color: #f4f4f4;
+}
+
+.info-cards .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #1f3a4d;
+}
+
+@media (max-width: 768px) {
+    .info-cards .container {
+        flex-direction: column;
+    }
+}
