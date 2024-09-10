@@ -15,7 +15,7 @@ body {
 
 /* Header styles */
 header {
-    background: #2516b4;
+    background: #1f3a4d;
     color: white;
     padding: 1rem 0;
 }
@@ -212,8 +212,8 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
-    height: 0%;
-    background-color: rgba(16, 16, 16, 0.4);
+    height: 10%;
+    background-color: rgba(131, 129, 129, 0.857);
     /* 블러 처리된 배경 위에 어두운 오버레이 추가 */
     backdrop-filter: blur(10px);
     /* Blur 효과 추가 */
