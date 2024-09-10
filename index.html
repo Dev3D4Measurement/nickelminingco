@@ -4,70 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nickel Mining Co.</title>
+    <title data-i18n="meta.title">SBP - Leading Nickel Mining Company</title>
+    <meta name="description" data-i18n="meta.description"
+        content="SBP is a leading nickel mining company committed to sustainable practices and community development.">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/responsive.css">
+    <script src="scripts/language.js"></script>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <img src="images/logo.png" alt="Nickel Mining Co. Logo" class="logo">
+            <img src="images/logo.png" alt="SBP Logo" class="logo">
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="operations.html">Operations</a></li>
-                    <li><a href="sustainability.html">Sustainability</a></li>
-                    <li><a href="investors.html">Investors</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                    <li><a href="operations.html" data-i18n="nav.operations">Operation</a></li>
+                    <li><a href="community.html" data-i18n="nav.community">Community & Commitment</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                    <li class="language-selector">
+                        <select id="languageSelect">
+                            <option value="en">English</option>
+                            <option value="ko">한국어</option>
+                            <option value="id">Bahasa Indonesia</option>
+                        </select>
+                    </li>
                 </ul>
             </nav>
-            <div class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </header>
 
-    <main role="main">
-        <section class="hero">
+    <main>
+        <section class="hero home-hero">
             <div class="container">
-                <h1>Powering the Future with Nickel</h1>
-                <p>Over 50 years of responsible mining practices</p>
-                <a href="about.html" class="btn">Learn More</a>
+                <h2 data-i18n="home.hero.title">Welcome to SBP</h2>
+                <p data-i18n="home.hero.subtitle">Leading the way in nickel mining and sustainable practices</p>
             </div>
         </section>
 
-        <section class="info-cards">
+        <section class="content">
             <div class="container">
-                <div class="card">
-                    <h2>About Us</h2>
-                    <p>Nickel Mining Co. is a leading global producer of high-quality nickel. With over 50 years of
-                        experience, we are committed to responsible mining practices and sustainable development.</p>
-                </div>
-                <div class="card">
-                    <h2>Our Operations</h2>
-                    <p>We operate state-of-the-art nickel mines across three continents, employing cutting-edge
-                        technology to ensure efficient and environmentally friendly extraction processes.</p>
-                </div>
-                <div class="card">
-                    <h2>Sustainability</h2>
-                    <p>Our commitment to sustainability drives every aspect of our operations. We strive to minimize our
-                        environmental impact while maximizing benefits for local communities.</p>
-                </div>
+                <h3 data-i18n="home.content.title">Our Focus</h3>
+                <p data-i18n="home.content.description">SBP mines nickel ore with a content of 1.6-1.8% in Konawe Utara,
+                    Sulawesi Tenggara, supplying domestic nickel smelter plants for stainless steel production.</p>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <h3 data-i18n="contact.title">Contact Us</h3>
+                <form id="contact-form" class="modern-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name" data-i18n="contact.form.name.label">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email" data-i18n="contact.form.email.label">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject" data-i18n="contact.form.subject.label">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message" data-i18n="contact.form.message.label">Message</label>
+                    </div>
+                    <button type="submit" data-i18n="contact.form.submit">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Nickel Mining Co. All rights reserved.</p>
+            <p data-i18n="footer.copyright">&copy; 2024 SBP. All rights reserved.</p>
             <ul class="social-links">
-                <li><a href="#" class="facebook">Facebook</a></li>
-                <li><a href="#" class="twitter">Twitter</a></li>
-                <li><a href="#" class="linkedin">LinkedIn</a></li>
+                <li><a href="#" data-i18n="footer.social.facebook">Facebook</a></li>
+                <li><a href="#" data-i18n="footer.social.twitter">Twitter</a></li>
+                <li><a href="#" data-i18n="footer.social.linkedin">LinkedIn</a></li>
             </ul>
         </div>
     </footer>
