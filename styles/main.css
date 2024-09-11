@@ -69,7 +69,7 @@ header nav ul li a {
 
 .page-hero {
     height: 500px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation07.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation07.png');
 }
 
 /* Content styles */
@@ -174,6 +174,18 @@ footer {
     }
 
     header .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .hamburger-menu {
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+    header .container {
         flex-direction: column;
     }
 
@@ -231,4 +243,31 @@ footer {
     /* 텍스트를 중앙 정렬 */
     padding-top: 10vh;
     /* 텍스트를 화면 중앙에 배치 (옵션) */
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
 }
