@@ -53,3 +53,56 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.setAttribute('aria-expanded', 'false');
         }
     });
+
+   document.addEventListener("DOMContentLoaded", function () {
+     const contactForm = document.getElementById("contactForm");
+     const submitBtn = document.getElementById("submitBtn");
+
+     if (contactForm && submitBtn) {
+       contactForm.addEventListener("submit", function (e) {
+         e.preventDefault();
+
+         const name = document.getElementById("name").value;
+         const email = document.getElementById("email").value;
+         const subject = document.getElementById("subject").value;
+         const message = document.getElementById("message").value;
+
+         const mailtoLink = `mailto:thewjk1629@gmail.com?subject=${encodeURIComponent(
+           subject
+         )}&body=Name: ${encodeURIComponent(
+           name
+         )}%0D%0AEmail: ${encodeURIComponent(
+           email
+         )}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+
+         // Create a hidden link element
+         const linkElement = document.createElement("a");
+         linkElement.href = mailtoLink;
+         linkElement.style.display = "none";
+         document.body.appendChild(linkElement);
+
+         // Simulate a click on the link
+         linkElement.click();
+
+         // Remove the link element
+         document.body.removeChild(linkElement);
+
+         // Reset the form
+         contactForm.reset();
+
+         // Provide feedback to the user
+         alert("Thank you for your message. We will get back to you soon!");
+         alert(
+           "If your email client does not open, please send an email directly to thewjk1629@gmail.com"
+         );
+       });
+
+       // Add button click event
+       submitBtn.addEventListener("click", function (e) {
+         if (contactForm.checkValidity()) {
+           e.preventDefault();
+           contactForm.dispatchEvent(new Event("submit"));
+         }
+       });
+     }
+   });
