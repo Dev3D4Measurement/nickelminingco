@@ -68,12 +68,12 @@ header .container {
 }
 
 .home-hero {
-    height: 600px;
+    height: 500px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation05.png');
 }
 
 .page-hero {
-    height: 500px;
+    height: 400px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation07.png');
 }
 
