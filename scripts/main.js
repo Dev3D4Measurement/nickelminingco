@@ -37,3 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger-menu");
+  const nav = document.querySelector("header nav ul");
+
+  if (hamburger) {
+    hamburger.addEventListener("click", function () {
+      nav.classList.toggle("show");
+    });
+  }
+});
