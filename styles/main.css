@@ -68,7 +68,7 @@ header .container {
 }
 
 .home-hero {
-    height: 1000px;
+    height: 600px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation05.png');
 }
 
@@ -174,7 +174,7 @@ footer {
 
 @media (max-width: 768px) {
     .hamburger-menu {
-        display:;
+        display:block;
     }
 
     nav {
@@ -232,7 +232,7 @@ header.scrolled {
     /* 텍스트를 읽기 쉽게 흰색으로 설정 */
     text-align: center;
     /* 텍스트를 중앙 정렬 */
-    padding-top: 10vh;
+    padding-top: 0.1vh;
     /* 텍스트를 화면 중앙에 배치 (옵션) */
 }
 
