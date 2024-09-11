@@ -8,35 +8,36 @@
     <meta name="description" data-i18n="meta.description"
         content="SBP is a leading nickel mining company committed to sustainable practices and community development.">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
     <script src="scripts/language.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <img src="images/logo.png" alt="SBP Logo" class="logo">
-            <nav>
-                <div class="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul>
-                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-                    <li><a href="about.html" data-i18n="nav.about">About</a></li>
-                    <li><a href="operations.html" data-i18n="nav.operations">Operation</a></li>
-                    <li><a href="community.html" data-i18n="nav.community">Community & Commitment</a></li>
-                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <img src="./images/logo.png" alt="SBP Logo" class="logo">
+        <button class="hamburger-menu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="operations.html">Operation</a></li>
+                <li><a href="community.html">Community & Commitment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main>
         <section class="hero home-hero">
             <div class="container">
-                <h1 data-i18n="home.hero.title">Welcome to SBP</h1>
-                <p data-i18n="home.hero.subtitle">Leading the way in nickel mining and sustainable practices</p>
+                <h2 data-i18n="home.hero.title">Welcome to SBP</h2>
+                <h4 data-i18n="home.hero.subtitle">Leading the way in nickel mining</h4>
             </div>
         </section>
 
@@ -46,6 +47,27 @@
                 <h3 data-i18n="home.content.title">Our Focus</h3>
                 <p data-i18n="home.content.description">SBP mines nickel ore with a content of 1.6-1.8% in Konawe Utara,
                     Sulawesi Tenggara, supplying domestic nickel smelter plants for stainless steel production.</p>
+            </div>
+        </section>
+
+        <section class="cards-section">
+            <div class="container">
+                <div class="card">
+                    <h2>Welcome to SBP</h2>
+                    <p>SBP is a leading nickel ore mining company based in Sulawesi Tenggara, Indonesia. We specialize in
+                        producing high-quality nickel ore with a nickel content of 1.6-1.8%, essential for electric vehicle
+                        batteries and stainless steel production.</p>
+                </div>
+                <div class="card">
+                    <h2>Our Vision</h2>
+                    <p>We aim to become a global leader in nickel ore production, supporting the growth of the electric vehicle
+                        battery industry while maintaining our commitment to sustainability.</p>
+                </div>
+                <div class="card">
+                    <h2>Commitment to Excellence</h2>
+                    <p>With a target production of 800,000 tons by 2024, we employ cutting-edge technology and efficient
+                        processes to ensure high-quality nickel ore extraction and processing.</p>
+                </div>
             </div>
         </section>
 

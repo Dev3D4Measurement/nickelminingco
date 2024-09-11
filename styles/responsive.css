@@ -3,7 +3,7 @@
         width: 90%;
     }
 
-    header .logo,
+    header .logo:,
     header nav,
     header nav li {
         float: none;
@@ -52,27 +52,29 @@
 @media (max-width: 768px) {
     .hamburger-menu {
         display: block;
-        position: absolute;
-        top: 15px;
-        right: 15px;
     }
 
-    header nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #1f3a4d;
-        padding: 20px 0;
+    header nav {
+        position:fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: #1f3a4d;
+        transition: right 0.3s ease;
     }
 
-    header nav ul.show {
-        display: flex;
+    header nav.show {
+        right: 0;
     }
 
-    header nav ul li {
+    .nav-menu {
+        flex-direction:column;
+        padding: 80px 20px 0;
+        height: 100%;
+    }
+
+    .nav-menu li {
         margin: 10px 0;
     }
 }

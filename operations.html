@@ -8,54 +8,61 @@
     <meta name="description" data-i18n="meta.operationsDescription"
         content="Discover SBP's nickel mining operations, production targets, and quality control measures.">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
     <script src="scripts/language.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <img src="images/logo.png" alt="SBP Logo" class="logo">
-            <nav>
-                <div class="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul>
-                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-                    <li><a href="about.html" data-i18n="nav.about">About</a></li>
-                    <li><a href="operations.html" data-i18n="nav.operations">Operation</a></li>
-                    <li><a href="community.html" data-i18n="nav.community">Community & Commitment</a></li>
-                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <img src="./images/logo.png" alt="SBP Logo" class="logo">
+        <button class="hamburger-menu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="operations.html">Operation</a></li>
+                <li><a href="community.html">Community & Commitment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 
     <main>
         <section class="hero page-hero">
             <div class="container">
                 <h2 data-i18n="operations.hero.title">Our Operations</h2>
+                We envision becoming a global leader in nickel ore production,
             </div>
         </section>
 
-        <section class="content">
+        <section class="cards-section">
             <div class="container">
+                <div class="card">
                 <h3 data-i18n="operations.production.title">Production</h3>
                 <p data-i18n="operations.production.description">In 2024, our target production is 800,000 tons. The
                     quality of nickel mined is 1.6-1.8%, with 1.4 as off-spec. Production is continuing in close
-                    cooperation with mining contractors and SBP's Technical Team.</p>
-
+                    cooperation with mining contractors and SBP's Technical Team.</p> 
+                </div>
+                <div class="card">
                 <h3 data-i18n="operations.trucking.title">Trucking and Stockpile Management</h3>
                 <p data-i18n="operations.trucking.description">Nickel Ore mined from the Open Pit is transported to 8
                     stockpiles located around the PIT and Access road, where ETO and EFO are separated and stocked for
                     shipment. It is transported about 10 km on the access road and local road to the barge loading
                     jetty.</p>
-
+                </div>
+                <div class="card">  
                 <h3 data-i18n="operations.quality.title">Quality Control</h3>
                 <p data-i18n="operations.quality.description">We are preparing an on-site lab, which will be completed
                     in November. This will enable us to conduct our own analysis within our camp, getting results in
                     just three or four hours, enabling efficient ore production and stock pile management.</p>
+                </div>
             </div>
         </section>
     </main>
