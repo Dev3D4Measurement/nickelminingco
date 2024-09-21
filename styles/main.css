@@ -55,7 +55,7 @@ header .container {
     transition: color 0.3s ease;
 }
 
-/* Hero section styles */
+/* Hero section styles 
 .hero {
     background-position: center;
     background-repeat: no-repeat;
@@ -66,11 +66,63 @@ header .container {
     align-items: center;
     justify-content: center;
 }
-
+/*
 .home-hero {
     height: 400px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation01.png');
+} */
+
+/* Existing styles remain unchanged */
+
+/* Updated Hero section styles */
+.hero {
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 700px;
+    /* 명시적 높이 설정 */
 }
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    object-fit: cover;
+    /* 비디오가 영역을 꽉 채우도록 설정 */
+}
+
+.hero.home-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero.home-hero .container {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+/* Rest of the CSS remains unchanged */
+
+
+/* Rest of the CSS remains unchanged */
 
 .page-hero {
     height: 400px;
@@ -330,7 +382,58 @@ header nav ul li a {
         padding: 15px;
     }
 }
+/* 기존 스타일은 그대로 유지 */
 
+/* 카드 섹션 스타일 제거 */
+/*
+.cards-section {
+    padding: 2rem 0;
+    background-color: #f0f0f0;
+}
+*/
+
+/* 새로운 콘텐츠 섹션 스타일 */
+.content-section {
+    padding: 4rem 0;
+    background-color: #f0f0f0;
+}
+
+.content-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.centered-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.btn.hero-btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn.hero-btn:hover {
+    background-color: #45a049;
+}
+
+/* 기존의 .card 관련 스타일은 모두 제거 */
+
+/* 나머지 CSS 코드는 그대로 유지 */
+/*
 .cards-section {
     padding: 2rem 0;
     background-color: #f0f0f0;
@@ -382,7 +485,7 @@ header nav ul li a {
         padding: 15px;
     }
 }
-
+*/
 .contact {
     padding: 2rem 0;
     background-color: #f9f9f9;
