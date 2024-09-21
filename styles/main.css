@@ -83,7 +83,7 @@ header .container {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    height: 500px;
+    height: 400px;
     /* 명시적 높이 설정 */
 }
 
