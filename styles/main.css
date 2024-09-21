@@ -581,3 +581,23 @@ header nav ul li a {
 }
 
 /* 나머지 CSS 코드 유지 */
+/* 기존 스타일 유지 */
+
+body {
+    overflow-x: hidden;
+    /* 가로 스크롤 방지 */
+}
+
+#page-container {
+    transition: transform 0.3s ease-out;
+}
+
+.swiping-left #page-container {
+    transform: translateX(-10px);
+}
+
+.swiping-right #page-container {
+    transform: translateX(10px);
+}
+
+/* 나머지 CSS 코드 유지 */
