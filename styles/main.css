@@ -27,16 +27,11 @@ header {
 
 header .container {
     display: flex;
-    justify-content:center;
+    justify-content: center;
+    /* 중앙 정렬 */
     align-items: center;
 }
 
-.logo {
-    height: 50px;
-    width: auto;
-}
-
-/* 네비게이션 메뉴 */
 .nav-menu {
     display: flex;
     list-style-type: none;
@@ -45,7 +40,8 @@ header .container {
 }
 
 .nav-menu li {
-    margin-left: 20px;
+    margin: 0 20px;
+    /* 좌우 간격 증가 */
 }
 
 .nav-menu a {
@@ -53,28 +49,18 @@ header .container {
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
+    padding: 10px 0;
+    /* 상하 패딩 추가 */
 }
 
-/* Hero section styles 
-.hero {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* 로고 위치 조정 */
+.logo {
+    height: 50px;
+    width: auto;
+    position: absolute;
+    left: 20px;
 }
-/*
-.home-hero {
-    height: 400px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation01.png');
-} */
 
-/* Existing styles remain unchanged */
-
-/* Updated Hero section styles */
 .hero {
     position: relative;
     color: white;
@@ -84,7 +70,6 @@ header .container {
     justify-content: center;
     overflow: hidden;
     height: 400px;
-    /* 명시적 높이 설정 */
 }
 
 .hero-video {
@@ -98,18 +83,8 @@ header .container {
     transform: translateX(-50%) translateY(-50%);
     z-index: -1;
     object-fit: cover;
-    animation: slowMotion 250s linear infinite;
 }
 
-@keyframes slowMotion {
-    0% {
-        transform: translateX(-50%) translateY(-50%) scale(1);
-    }
-
-    100% {
-        transform: translateX(-50%) translateY(-50%) scale(1.1);
-    }
-}
 
 .hero.home-hero::before {
     content: '';
@@ -118,7 +93,8 @@ header .container {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
+    /* 투명도 증가 */
     z-index: 1;
 }
 
@@ -129,15 +105,45 @@ header .container {
     text-align: center;
 }
 
-/* Rest of the CSS remains unchanged */
+// 불필요한 필터 및 애니메이션 제거
 
+/* 기존 코드 유지 */
 
-/* Rest of the CSS remains unchanged */
-
-.page-hero {
+/* .page-hero {
     height: 400px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation07.png');
+    background-position: center center;
+    /* 이미지 중앙 정렬 */
+    /* background-repeat: no-repeat;
+    background-size: cover;*/
+    /* 반응형 크기 조정 */
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
+
+/* 각 페이지별 히어로 이미지 설정 */
+.about-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/about-hero.jpg');
 }
+
+.operations-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operations-hero.jpg');
+}
+
+.community-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/community-hero.jpg');
+}
+
+.contact-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/contact-hero.jpg');
+}
+
+.sbpmodal-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/sbpmodal-hero.jpg');
+}
+
+/* 나머지 기존 코드 유지 */
 
 /* Content styles */
 .content {
@@ -236,7 +242,7 @@ footer {
 
 @media (max-width: 768px) {
     .hamburger-menu {
-        display:block;
+        display: block;
     }
 
     nav {
@@ -271,32 +277,6 @@ header.scrolled {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.hero.home-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background-color: rgba(131, 129, 129, 0.857);
-    /* 블러 처리된 배경 위에 어두운 오버레이 추가 */
-    backdrop-filter: blur(10px);
-    /* Blur 효과 추가 */
-    z-index: 1;
-    /* 오버레이와 Blur 효과를 텍스트 뒤에 배치 */
-}
-
-.hero.home-hero .container {
-    position: relative;
-    z-index: 2;
-    /* 텍스트를 오버레이와 Blur 효과 위에 배치 */
-    color: white;
-    /* 텍스트를 읽기 쉽게 흰색으로 설정 */
-    text-align: center;
-    /* 텍스트를 중앙 정렬 */
-    padding-top: 0.1vh;
-    /* 텍스트를 화면 중앙에 배치 (옵션) */
-}
 
 header nav ul li {
     margin-left: 20px;
@@ -309,12 +289,7 @@ header nav ul li a {
     font-size: 16px;
 }
 
-
-
 /* Hamburger menu styles */
-
-/* 햄버거 메뉴 버튼 */
-
 .hamburger-menu {
     display: none;
     background: none;
@@ -332,83 +307,13 @@ header nav ul li a {
     background: white;
     transition: all 0.3s ease;
 }
+
 .cards-section {
     padding: 2rem 0;
     background-color: #f0f0f0;
 }
 
 .cards-section .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    flex: 1 1 300px;
-    max-width: 400px;
-    margin-bottom: 20px;
-}
-
-.card h2 {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #666;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* 반응형 미디어 쿼리 */
-@media (max-width: 1200px) {
-    .card {
-        flex: 1 1 calc(50% - 20px);
-        max-width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 768px) {
-    .card {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .cards-section .container {
-        padding: 0 10px;
-    }
-
-    .card {
-        padding: 15px;
-    }
-}
-/* 기존 스타일은 그대로 유지 */
-
-/* 카드 섹션 스타일 제거 */
-/*
-.cards-section {
-    padding: 2rem 0;
-    background-color: #f0f0f0;
-}
-*/
-
-/* 새로운 콘텐츠 섹션 스타일 */
-.content-section {
-    padding: 4rem 0;
-    background-color: #f0f0f0;
-}
-
-.content-section .container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
@@ -440,62 +345,6 @@ header nav ul li a {
     background-color: #45a049;
 }
 
-/* 기존의 .card 관련 스타일은 모두 제거 */
-
-/* 나머지 CSS 코드는 그대로 유지 */
-/*
-.cards-section {
-    padding: 2rem 0;
-    background-color: #f0f0f0;
-}
-
-.cards-section .container {
-    display: flex;
-    flex-direction:row;
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%;
-}
-
-.card h2 {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.card p,
-.card ul {
-    color: #666;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-    border-radius: 4px;
-}
-
-@media (max-width: 1080px) {
-    .cards-section .container {
-        padding: 0 10px;
-    }
-
-    .card {
-        padding: 15px;
-    }
-}
-*/
 .contact {
     padding: 2rem 0;
     background-color: #f9f9f9;
@@ -553,11 +402,10 @@ header nav ul li a {
     outline: none;
     box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
 }
+
 .hero-btn {
     margin-top: 20px;
 }
-
-/* 기존 스타일 유지 */
 
 #page-container {
     touch-action: pan-y;
@@ -580,12 +428,8 @@ header nav ul li a {
     text-decoration: underline;
 }
 
-/* 나머지 CSS 코드 유지 */
-/* 기존 스타일 유지 */
-
 body {
     overflow-x: hidden;
-    /* 가로 스크롤 방지 */
 }
 
 #page-container {
@@ -600,4 +444,131 @@ body {
     transform: translateX(10px);
 }
 
-/* 나머지 CSS 코드 유지 */
+.swiping-left .nav-menu a,
+.swiping-right .nav-menu a {
+    color: blue;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+
+    .swiping-left nav.show .nav-menu a,
+    .swiping-right nav.show .nav-menu a {
+        color: blue;
+    }
+}
+
+/* 기존의 .page-hero 스타일 수정 */
+.page-hero {
+    height: 400px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 배경 이미지를 위한 가상 요소 추가 */
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: moveBackground 15s ease-in-out infinite alternate;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
+
+/* 태블릿 디바이스를 위한 미디어 쿼리 */
+@media (max-width: 1024px) {
+    .page-hero::before {
+        animation: moveBackground 20s ease-in-out infinite alternate;
+    }
+}
+
+/* 모바일 디바이스를 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    .page-hero::before {
+        animation: moveBackground 25s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveBackground {
+        0% {
+            background-position: center 20%;
+        }
+
+        100% {
+            background-position: center 80%;
+        }
+    }
+}
+
+/* 작은 모바일 디바이스를 위한 미디어 쿼리 */
+@media (max-width: 480px) {
+    .page-hero::before {
+        animation: moveBackground 30s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveBackground {
+        0% {
+            background-position: center 30%;
+        }
+
+        100% {
+            background-position: center 70%;
+        }
+    }
+}
+
+/* 각 페이지별 히어로 이미지 설정 */
+.about-hero::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/sbpinfo-1/DJI_0254.JPG');
+}
+
+.operations-hero::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/operation03.png');
+}
+
+.community-hero::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/sbpinfo-1/WhatsApp\ Image\ 2024-07-16\ at\ 09.49.22_401803db.jpg');
+}
+
+.contact-hero::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/sbpinfo/WhatsApp\ Image\ 2024-07-16\ at\ 09.49.22_5f40e607.jpg');
+}
+
+.sbpmodal-hero::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/sbpinfo/DJI_0254.JPG');
+}
+
+/* 배경 이미지 움직임을 위한 애니메이션 */
+@keyframes moveBackground {
+    0% {
+        background-position: center top;
+    }
+
+    100% {
+        background-position: center bottom;
+    }
+}
+
+/* 히어로 섹션 내용의 z-index 조정 */
+.page-hero .container {
+    position: relative;
+    z-index: 1;
+}
