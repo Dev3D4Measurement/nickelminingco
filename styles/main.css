@@ -556,3 +556,28 @@ header nav ul li a {
 .hero-btn {
     margin-top: 20px;
 }
+
+/* 기존 스타일 유지 */
+
+#page-container {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    #page-container {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+}
+
+.nav-menu a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* 나머지 CSS 코드 유지 */
