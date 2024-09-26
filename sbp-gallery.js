@@ -3,12 +3,14 @@ class SBPGallery {
     this.container = document.getElementById(containerId);
     this.options = options;
     this.images = options.images || [];
+    this.currentImageIndex = 0;
     this.init();
   }
 
   init() {
     this.renderGallery();
     this.createModal();
+    this.initModalNavigation();
   }
 
   renderGallery() {
@@ -23,7 +25,7 @@ class SBPGallery {
       item.appendChild(img);
       this.container.appendChild(item);
 
-      item.addEventListener("click", () => this.openModal(img.src, img.alt));
+      item.addEventListener("click", () => this.openModal(index));
     });
   }
 
@@ -31,45 +33,125 @@ class SBPGallery {
     this.modal = document.createElement("div");
     this.modal.className = "sbp-modal";
 
-    const modalContent = document.createElement("img");
-    modalContent.className = "sbp-modal-content";
+    this.modalContent = document.createElement("img");
+    this.modalContent.className = "sbp-modal-content";
 
     const closeBtn = document.createElement("button");
     closeBtn.className = "sbp-close";
     closeBtn.textContent = "Exit";
     closeBtn.onclick = () => this.closeModal();
 
-    this.modal.appendChild(modalContent);
-    this.modal.appendChild(closeBtn);
-    document.body.appendChild(this.modal);
+    const prevBtn = document.createElement("button");
+    prevBtn.className = "sbp-nav-btn sbp-prev";
+    prevBtn.textContent = "❮";
+    prevBtn.onclick = () => this.showPreviousImage();
 
-    window.addEventListener("resize", () => this.adjustModalImage());
+    const nextBtn = document.createElement("button");
+    nextBtn.className = "sbp-nav-btn sbp-next";
+    nextBtn.textContent = "❯";
+    nextBtn.onclick = () => this.showNextImage();
+
+    this.modal.appendChild(this.modalContent);
+    this.modal.appendChild(closeBtn);
+    this.modal.appendChild(prevBtn);
+    this.modal.appendChild(nextBtn);
+    document.body.appendChild(this.modal);
   }
 
-  openModal(imageSrc, imageAlt) {
-    const modalContent = this.modal.querySelector(".sbp-modal-content");
-    modalContent.src = imageSrc;
-    modalContent.alt = imageAlt;
+  initModalNavigation() {
+    // 터치 스와이프 (모바일)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    this.modal.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+      },
+      false
+    );
+
+    this.modal.addEventListener(
+      "touchmove",
+      (e) => {
+        e.preventDefault();
+      },
+      false
+    );
+
+    this.modal.addEventListener(
+      "touchend",
+      (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        this.handleModalSwipe(touchStartX, touchEndX);
+      },
+      false
+    );
+
+    // 키보드 네비게이션 (데스크톱)
+    document.addEventListener("keydown", (e) => {
+      if (this.modal.style.display === "flex") {
+        if (e.key === "ArrowLeft") {
+          this.showPreviousImage();
+        } else if (e.key === "ArrowRight") {
+          this.showNextImage();
+        } else if (e.key === "Escape") {
+          this.closeModal();
+        }
+      }
+    });
+  }
+
+  handleModalSwipe(touchStartX, touchEndX) {
+    const swipeThreshold = 50;
+    const swipeLength = touchEndX - touchStartX;
+
+    if (swipeLength > swipeThreshold) {
+      this.showPreviousImage();
+    } else if (swipeLength < -swipeThreshold) {
+      this.showNextImage();
+    }
+  }
+
+  openModal(index) {
+    this.currentImageIndex = index;
+    this.updateModalImage();
     this.modal.style.display = "flex";
-    this.adjustModalImage();
   }
 
   closeModal() {
     this.modal.style.display = "none";
   }
 
+  showPreviousImage() {
+    this.currentImageIndex =
+      (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+    this.updateModalImage();
+  }
+
+  showNextImage() {
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+    this.updateModalImage();
+  }
+
+  updateModalImage() {
+    const image = this.images[this.currentImageIndex];
+    this.modalContent.src = image.src;
+    this.modalContent.alt = image.alt;
+    this.adjustModalImage();
+  }
+
   adjustModalImage() {
-    const modalContent = this.modal.querySelector(".sbp-modal-content");
-    const aspectRatio = modalContent.naturalWidth / modalContent.naturalHeight;
+    const aspectRatio =
+      this.modalContent.naturalWidth / this.modalContent.naturalHeight;
     const windowRatio = window.innerWidth / window.innerHeight;
 
     if (aspectRatio > windowRatio) {
-      modalContent.style.width = "90vw";
-      modalContent.style.height = "auto";
+      this.modalContent.style.width = "90vw";
+      this.modalContent.style.height = "auto";
     } else {
-      modalContent.style.width = "auto";
-      modalContent.style.height = "90vh";
+      this.modalContent.style.width = "auto";
+      this.modalContent.style.height = "90vh";
     }
   }
 }
-// Add image Gallery
