@@ -107,3 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // 기존의 페이지 스와이프 코드 유지
   // ...
 });
+
+// 현재 페이지 메뉴 항목에 'active' 클래스 추가
+  const currentPage = pages[currentPageIndex];
+  const menuItems = document.querySelectorAll(".nav-menu a");
+  menuItems.forEach((item) => {
+    if (item.getAttribute("href") === currentPage) {
+      item.classList.add("active");
+    }
+  });

@@ -105,7 +105,7 @@ header .container {
     text-align: center;
 }
 
-// 불필요한 필터 및 애니메이션 제거
+
 
 /* 기존 코드 유지 */
 
@@ -140,7 +140,7 @@ header .container {
 }
 
 .sbpmodal-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/sbpmodal-hero.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/sbpinfo/WhatsApp\ Image\ 2024-07-16\ at\ 09.49.23_f1b8c722.jpg');
 }
 
 /* 나머지 기존 코드 유지 */
@@ -571,4 +571,168 @@ body {
 .page-hero .container {
     position: relative;
     z-index: 1;
+}
+/* 새로운 스타일 추가 */
+.content {
+    padding: 4rem 0;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.view-all {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #1f3a4d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.work-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.work-image {
+    position: relative;
+}
+
+.work-image img {
+    width: 100%;
+    height: auto;
+}
+
+.work-tag {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+.work-item h3 {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.work-item p {
+    margin: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content h2 {
+        font-size: 2rem;
+    }
+
+    .view-all {
+        text-align: center;
+    }
+}
+
+/* operations 페이지를 위한 새로운 스타일 */
+.operations-content {
+    padding: 4rem 0;
+    background-color: #f5f5f5;
+}
+
+.operations-content .operations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.operations-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #333;
+}
+
+.operations-work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.operations-work-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.operations-work-item:hover {
+    transform: translateY(-5px);
+}
+
+.operations-work-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.operations-work-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.operations-work-item:hover .operations-work-image img {
+    transform: scale(1.05);
+}
+
+.operations-work-item h3 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: #333;
+}
+
+.operations-work-item p {
+    margin: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .operations-work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .operations-content h2 {
+        font-size: 2rem;
+    }
+
+    .operations-work-item {
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
