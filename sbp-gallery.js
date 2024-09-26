@@ -72,3 +72,4 @@ class SBPGallery {
     }
   }
 }
+// Add image Gallery
