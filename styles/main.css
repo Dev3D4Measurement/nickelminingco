@@ -615,7 +615,7 @@ body {
 
 .work-image img {
     width: 100%;
-    height: auto;
+    height: 15%;
 }
 
 .work-tag {
@@ -739,7 +739,5 @@ body {
 /* Add Image Gallery */
 
 .button-container {
-    posi
     text-align: center;
 }
-scroll-behavior: smooth;
