@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/responsive.css">
     <link rel="stylesheet" href="sbp-gallery.css">
     <script src="sbp-gallery.js"></script>
+    
 </head>
 
 <body>
@@ -45,7 +46,9 @@
 
             <section class="operations-content">
                 <div class="operations-container">
-                    <!--<h2>ABOUT US</h2>-->
+                    <div class="container">
+                        <h1 style="text-decoration: wavy; margin-bottom: 100px; text-align: center;">SBP</h1>
+                    </div>
                     <div class="operations-work-grid">
                         <div class="operations-work-item">
                             <div class="operations-work-image">
@@ -101,13 +104,12 @@
                     </div>
                 </div>
             </section>
-            <section class="iframe-section">
+            <!-- 갤러리 섹션 추가 -->
+            <section class="gallery">
                 <div class="container">
-                    <div style="position:relative;padding-top:max(60%,324px);width:100%;height:0;">
-                        <iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;"
-                            src="https://online.fliphtml5.com/czrfk/mowz/" seamless="seamless" scrolling="no"
-                            frameborder="0" allowtransparency="true" allowfullscreen="true">
-                        </iframe>
+                    <h2 style="text-align: center; text-emphasis-color: white;">SBP Mining Site</h2>
+                    <div id="sbpImageGallery" class="sbp-gallery">
+                        <!-- 갤러리 내용은 JavaScript로 동적 생성됩니다 -->
                     </div>
                 </div>
             </section>
@@ -131,13 +133,33 @@
         document.addEventListener('DOMContentLoaded', () => {
             new SBPGallery('sbpImageGallery', {
                 images: [
-                    { src: './images/1.jpg', alt: 'Image 1' },
-                    { src: './images/2.jpg', alt: 'Image 2' },
-                    { src: './images/3.jpg', alt: 'Image 3', tall: true },
-                    { src: './images/4.jpg', alt: 'Image 4' },
-                    { src: './images/5.jpg', alt: 'Image 5' },
-                    { src: './images/6.jpg', alt: 'Image 6', tall: true },
+                    { src: './images/sbpinfo/WhatsApp Image 2024-07-16 at 09.49.22_7b752383.jpg', alt: 'Image 1' },
+                    { src: './images/sbpinfo/IMG_0346.jpg', alt: 'Image 2', tall: true },
+                    { src: './images/sbpinfo-1/WhatsApp Image 2024-07-16 at 09.49.18_876a10b9.jpg', alt: 'Image 3' },
+                    { src: './images/sbpinfo/WhatsApp Image 2024-07-16 at 09.49.22_4e9684af.jpg', alt: 'Image 4', tall: true },
+                    { src: './images/sbpinfo/WhatsApp Image 2024-07-16 at 09.49.15_3c81760f.jpg', alt: 'Image 5' },
+                    { src: './images/sbpinfo/WhatsApp Image 2024-07-16 at 09.49.22_346eea3a.jpg', alt: 'Image 6', tall: true },
+                    { src: './images/sbpinfo/WhatsApp Image 2024-07-16 at 09.49.23_52799eee.jpg', alt: 'Image 7' },
+                    { src: './images/sbpinfo-1/WhatsApp Image 2024-07-16 at 09.49.23_87f799b9.jpg', alt: 'Image 8' },
+                    { src: './images/sbpinfo/WhatsApp Image 2024-07-16 at 09.49.22_ac901274.jpg', alt: 'Image 9', tall: true },
+                    { src: './images/sbpinfo/WhatsApp Image 2024-07-16 at 09.49.23_69408ebf.jpg', alt: 'Image 10' },
+                    { src: './images/sbpinfo/WhatsApp Image 2024-07-16 at 09.49.22_69a321be.jpg', alt: 'Image 11', tall: true },
+                    { src: './images/sbpinfo-1/WhatsApp Image 2024-07-16 at 09.49.22_bfecda66.jpg', alt: 'Image 12' },
+                    { src: './images/sbpinfo/WhatsApp Image 2024-07-16 at 09.49.23_f3f42148.jpg', alt: 'Image 13', tall: true },
+                    { src: './images/sbpinfo/IMG_3283.jpg', alt: 'Image 14', tall: true },
+                    { src: './images/sbpinfo-1/WhatsApp Image 2024-07-16 at 09.49.15_81ec2492.jpg', alt: 'Image 15', tall: true },
+
+                    { src: './images/sbpinfo-1/WhatsApp Image 2024-07-16 at 09.49.23_2456d346.jpg', alt: 'Image 16' },
+                    { src: './images/sbpinfo-1/WhatsApp Image 2024-07-16 at 09.49.18_1ef96c2d.jpg', alt: 'Image 17', tall: true },
+                    { src: './images/sbpinfo-1/WhatsApp Image 2024-07-16 at 09.49.22_5267bed9.jpg', alt: 'Image 18' },
+                    { src: './images/sbpinfo-1/WhatsApp Image 2024-07-16 at 09.49.22_568ad755.jpg', alt: 'Image 19', tall: true },
+                    { src: './images/sbpinfo/WhatsApp Image 2024-07-16 at 09.49.18_3b9276bb.jpg', alt: 'Image 22', tall: true },
+                    { src: './images/sbpinfo-1/WhatsApp Image 2024-07-16 at 09.49.22_5f40e607.jpg', alt: 'Image 21' },
+
+
+
                     // ... 추가 이미지
+                    // ... Add image gallery
                 ]
             });
         });
