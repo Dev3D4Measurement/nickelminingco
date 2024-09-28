@@ -106,6 +106,7 @@
 
             
         </main>
+        
     </div>
     
 
@@ -119,9 +120,31 @@
             </ul>
         </div>
     </footer>
+    <button id="goToTopBtn" title="Go to top">↑</button>
 
     <script src="./scripts/main.js"></script>
-    <script src="sbp-gallery.js"></script>        
+    <script src="sbp-gallery.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var goToTopBtn = document.getElementById("goToTopBtn");
+
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 100) {
+                    goToTopBtn.style.display = "block";
+                } else {
+                    goToTopBtn.style.display = "none";
+                }
+            });
+
+            goToTopBtn.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

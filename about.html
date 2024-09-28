@@ -114,6 +114,8 @@
                 </div>
             </section>
         </main>
+        <!-- 각 페이지의 #page-container div 안에, 마지막 요소로 다음 코드를 추가해주세요 -->
+        <button id="goToTopBtn" title="Go to top">↑</button>
     </div>
 
     <footer>
@@ -126,7 +128,7 @@
             </ul>
         </div>
     </footer>
-
+        <button id="goToTopBtn" title="Go to top">↑</button>    
     <script src="./scripts/main.js"></script>
     <script src="sbp-gallery.js"></script>
     <script>
@@ -161,6 +163,29 @@
                     // ... 추가 이미지
                     // ... Add image gallery
                 ]
+            });
+        });
+    </script>
+    
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var goToTopBtn = document.getElementById("goToTopBtn");
+
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 100) {
+                    goToTopBtn.style.display = "block";
+                } else {
+                    goToTopBtn.style.display = "none";
+                }
+            });
+
+            goToTopBtn.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
         });
     </script>

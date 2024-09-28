@@ -741,3 +741,54 @@ body {
 .button-container {
     text-align: center;
 }
+
+/* main.css 파일의 맨 아래에 다음 스타일을 추가하거나 기존 스타일을 대체해주세요 */
+#goToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    transition: opacity 0.3s;
+    opacity: 0.6;
+}
+
+#goToTopBtn::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-left: 3px solid #0066cc;
+    border-top: 3px solid #0066cc;
+    transform: rotate(45deg);
+    transition: border-color 0.3s;
+}
+
+#goToTopBtn:hover {
+    opacity: 1;
+}
+
+#goToTopBtn:hover::before {
+    border-color: #0052a3;
+}
+
+@media only screen and (max-width: 600px) {
+    #goToTopBtn {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    #goToTopBtn::before {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+#page-container {
+    position: relative;
+}
