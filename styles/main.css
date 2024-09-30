@@ -700,7 +700,7 @@ body {
 
 .operations-work-image img {
     width: 100%;
-    height: 200px;
+    height: 120Px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
